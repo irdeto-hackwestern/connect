@@ -55,9 +55,30 @@ void loop() {
     lastCheck = millis();
   }
 
+  processSerial();
+
   delay(10); 
     
 } 
+
+/**
+ * processSerial
+ */
+void processSerial(){
+  
+  if (Serial.available() > 0) {    
+    String input = Serial.readString();
+
+    //Serial.printf("> '%s'\n");
+    
+    //reboot
+    if(input.startsWith("/reboot")){      
+      Serial.println("Rebooting....");
+      ESP.restart();
+    }      
+  }
+  
+}
 
 void sendBleCommand(byte *action){
   if (connected) {      
