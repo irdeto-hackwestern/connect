@@ -55,7 +55,7 @@ void loop() {
     lastCheck = millis();
   }
 
-  delay(10); // delay 30s
+  delay(10); 
     
 } 
 
