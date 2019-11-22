@@ -5,17 +5,12 @@
 static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
 static BLEUUID charUUID(   "beb5483e-36e1-4688-b7f5-ea07361b26a8");
 
-//static BLEUUID serviceUUID("4FAFC201-1FB5-459E-8FCC-C5C9C331914B");
-//static BLEUUID    charUUID("BEB5483E-36E1-4688-B7F5-EA07361B26A8");
-                  
-
-
 /**
  * F - Forward          0x46
  * B - Back             0x42
  * R - Right            0x52
  * L - Left             0x4C
- * S - STOP             0x53
+ * S - Stop             0x53
  * D - Driver Door      0x44
  * P - Passenger Door   0x50
  */
