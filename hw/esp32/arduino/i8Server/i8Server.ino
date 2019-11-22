@@ -11,8 +11,8 @@
 static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
 static BLEUUID charUUID(   "beb5483e-36e1-4688-b7f5-ea07361b26a8");
 
-const char *ssid = "mehan1";
-const char *password = "casamehan";
+const char *ssid = "myssid";
+const char *password = "myssidpassword";
 WebServer server(80);
 
 /**
@@ -31,14 +31,30 @@ void setup(void) {
   Serial.println("");
 
   // Wait for connection
-  while (WiFi.status() != WL_CONNECTED) {
+  int c = 0;
+  while ( c < 30 && WiFi.status() != WL_CONNECTED ) {    
+  
     delay(500);
     Serial.print(".");
+    c++;
   }
+
+  if(WiFi.status() == WL_CONNECTED){
+    Serial.printf ("\nConnected to %s\n",ssid );
+    Serial.print  ("IP address: ");
+    Serial.println(WiFi.localIP());
+    
+  }else{
+    Serial.println("\nFailed to connect to WIFI");
+    
+    //setup Access Point
+    WiFi.mode(WIFI_STA);
+    WiFi.disconnect();
+    delay(100);
+    WiFi.softAP("i8Controller");
+    Serial.println("Starting Access Point with SSID: 'i8Controller'");
   
-  Serial.printf ("\nConnected to %s\n",ssid );
-  Serial.print  ("IP address: ");
-  Serial.println(WiFi.localIP());
+  }
 
   if (MDNS.begin("i8Controller")) {
     Serial.println("MDNS responder started");
