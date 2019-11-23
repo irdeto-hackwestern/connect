@@ -56,6 +56,7 @@ BLE Commands
 | 0x50 | Forward |
 | 0x54 | Turn Tires Right |
 | 0x55 | Turn Tires Left |
+| 0x56 | Straight |
 
 Sample code found in:
 connect/hw/esp32/arduino/bleClient
@@ -73,6 +74,9 @@ Over wifi, you can send REST commands to the
 | /api/action/stop | GET | Stop|
 | /api/action/right | GET | Drive Right|
 | /api/action/left | GET | Drive Left|
+| /api/action/turnright | GET | Turn Right|
+| /api/action/turnleft | GET | Turn Left|
+| /api/action/straight | GET | Straight|
 
 Sample code found in:
 connect/hw/esp32/arduino/webClient
