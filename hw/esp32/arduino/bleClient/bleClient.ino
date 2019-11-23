@@ -6,24 +6,26 @@ static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
 static BLEUUID charUUID(   "beb5483e-36e1-4688-b7f5-ea07361b26a8");
 
 /**
- * F - Forward          0x46
- * B - Back             0x42
- * R - Right            0x52
- * L - Left             0x4C
- * S - Stop             0x53
- * D - Driver Door      0x44
- * P - Passenger Door   0x50
+ * F - Forward                      0x46
+ * B - Back                         0x42
+ * R - Right                        0x52
+ * L - Left                         0x4C
+ * S - Stop                         0x53
+ * T - Turn Tires Right             0x54
+ * U - Turn Tires Left              0x55
+ * D - Driver Door                  0x44
+ * P - Passenger Door               0x50
  */
 
-
-byte ACTION_FORWARD[1]        = {0x46};
-byte ACTION_BACK[1]           = {0x42};
-byte ACTION_RIGHT[1]          = {0x52};
-byte ACTION_LEFT[1]           = {0x4C};
-byte ACTION_STOP[1]           = {0x53};
-byte ACTION_DRIVER_DOOR[1]    = {0x44};
-byte ACTION_PASSENGER_DOOR[1] = {0x50};
-
+byte ACTION_FORWARD[1]            = {0x46};
+byte ACTION_BACK[1]               = {0x42};
+byte ACTION_RIGHT[1]              = {0x52};
+byte ACTION_LEFT[1]               = {0x4C};
+byte ACTION_STOP[1]               = {0x53};
+byte ACTION_TURN_TIRES_RIGHT[1]   = {0x54};
+byte ACTION_TURN_TIRES_LEFT[1]    = {0x55};
+byte ACTION_DRIVER_DOOR[1]        = {0x44};
+byte ACTION_PASSENGER_DOOR[1]     = {0x50};
 
 static boolean doConnect = false;
 static boolean connected = false;
@@ -46,6 +48,16 @@ void loop() {
   connectToI8Controller();
 
   if (millis() - lastCheck > 30000){
+    sendBleCommand(ACTION_DRIVER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_TURN_TIRES_RIGHT);
+    delay(1000);
+    sendBleCommand(ACTION_FORWARD);
+    delay(1000);
+    sendBleCommand(ACTION_BACK);
+    delay(1000);
+    sendBleCommand(ACTION_STOP);
+    delay(1000);
     sendBleCommand(ACTION_DRIVER_DOOR);
     lastCheck = millis();
   }
