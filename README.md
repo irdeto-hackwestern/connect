@@ -5,9 +5,11 @@ Design the coolest connected vehicles application or platform.
 
 # Board Details
 
-The board that you get with the challenge is a NodeMCU-32S. 
+As part of this challenge, contestants are offered a ESP32 development board. Your final demo does not need to incorporate the board. It is meant to give you more options.
 
+Node MCU-ESP32 Board:
 https://esphome.io/devices/nodemcu_esp32.html
+
 
 # Using the Arduino IDE
 
@@ -20,6 +22,7 @@ Adding the board to the Arduino IDE:
 
 https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
 
+Flash the board with either 'ESP32 Dev Module' board or the 'Node MCU-32S' board.
 
 # Sample Client Code
 
