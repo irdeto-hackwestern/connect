@@ -82,3 +82,4 @@ connect/hw/esp32/arduino/webClient
 | Problem | Details | Resotion |
 | ------ | ------ | ------ |
 | Failed to connect to board when uploading | A fatal error occurred: Failed to connect to ESP32: Invalid head of packet (0x0A)|Press and hold the GPIO-0 on board switch when connecting. |
+| Sketch too big |Sketch too big; see http://www.arduino.cc/en/Guide/Troubleshooting#size for tips on reducing it.|Change your board to ESP32 Dev Module and change the partition size to Huge|
