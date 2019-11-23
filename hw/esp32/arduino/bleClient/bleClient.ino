@@ -64,7 +64,7 @@ void loop() {
     sendBleCommand(ACTION_BACK);
     delay(2000);
     sendBleCommand(ACTION_STOP);
-    delay(1000);
+    delay(2000);
     
     sendBleCommand(ACTION_DRIVER_DOOR);
     delay(1000);
