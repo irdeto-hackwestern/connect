@@ -54,6 +54,8 @@ BLE Commands
 | 0x46 | Driver Door |
 | 0x44 | Passenger Door |
 | 0x50 | Forward |
+| 0x54 | Turn Tires Right |
+| 0x55 | Turn Tires Left |
 
 Sample code found in:
 connect/hw/esp32/arduino/bleClient
