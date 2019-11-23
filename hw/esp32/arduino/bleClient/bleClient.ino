@@ -37,7 +37,7 @@ long   lastCheck = 0;
 
 void setup() {
   Serial.begin(115200);
-  
+  Serial.println("\n\nbleClient - start\n");
   BLEDevice::init("Irdeto I8 Client");
   bleClientInit();
   
@@ -50,15 +50,30 @@ void loop() {
   if (millis() - lastCheck > 30000){
     sendBleCommand(ACTION_DRIVER_DOOR);
     delay(1000);
+    sendBleCommand(ACTION_PASSENGER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_DRIVER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_PASSENGER_DOOR);
+    delay(1000);
+
     sendBleCommand(ACTION_TURN_TIRES_RIGHT);
     delay(1000);
     sendBleCommand(ACTION_FORWARD);
-    delay(1000);
+    delay(2000);
     sendBleCommand(ACTION_BACK);
-    delay(1000);
+    delay(2000);
     sendBleCommand(ACTION_STOP);
     delay(1000);
+    
     sendBleCommand(ACTION_DRIVER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_PASSENGER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_DRIVER_DOOR);
+    delay(1000);
+    sendBleCommand(ACTION_PASSENGER_DOOR);
+
     lastCheck = millis();
   }
 
