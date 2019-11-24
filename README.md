@@ -54,8 +54,8 @@ BLE Commands
 | 0x46 | Driver Door |
 | 0x44 | Passenger Door |
 | 0x50 | Forward |
-| 0x54 | Turn Tires Right |
-| 0x55 | Turn Tires Left |
+| 0x54 | Turn Right |
+| 0x55 | Turn Left |
 | 0x56 | Straight |
 
 Sample code found in:
